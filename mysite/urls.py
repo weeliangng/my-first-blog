@@ -21,6 +21,6 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    path('accounts/login/', auth_views.login, name='login'),
-    path('accounts/logout/', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
 ]
